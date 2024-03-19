@@ -82,6 +82,21 @@ const showPhoneDetails = (phone) => {
   const phoneName = document.getElementById('show_details_phone_name');
   phoneName.innerText = phone.name;
 
+  const showDetailContainer = document.getElementById('show-detail-container');
+  showDetailContainer.innerHTML = `
+    <img src="${phone.image}" alt=""/> 
+    <p><span>Storage: </span>${phone?.mainFeatures?.storage}</p>
+    <p><span>Display Size :</span>${phone?.mainFeatures?.displaySize}</p>
+    <p><span>Chipset :</span>${phone?.mainFeatures?.chipSet}</p>
+    <p><span>Memory :</span>${phone?.mainFeatures?.memory}</p>
+    <p><span>Slug :</span>${phone?.slug}</p>
+    <p><span>Release Date :</span>${phone?.releaseDate}</p>
+    <p><span>Brand :</span>${phone?.brand}</p>
+    <p><span>GPS :</span>${phone?.others?.GPS}</p>
+    <p><span>GPS :</span>${phone?.others?.WLAN}</p>
+    <p><span>GPS :</span>${phone?.others?.USB}</p>
+  `
+
   // show the modal
   show_details_modal.showModal();
 }
